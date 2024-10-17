@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Prak3Pengulangan3 {
+    public static void main(String[] args) {
+        int pilihan, pbalok, lbalok, tbalok, jarijari, tinggi, asegitiga, tsegitiga, vbalok;
+        double lalaskerucut, lalassilinder, lalaslimas, vbola, vkerucut, vsilinder, vlimas;
+        Scanner input = new Scanner(System.in);
+        System.out.println("MENU");
+        System.out.println("0. KELUAR");
+        System.out.println("1. HITUNG VOLUME BALOK");
+        System.out.println("2. HITUNG VOLUME BOLA");
+        System.out.println("3. HITUNG VOLUME KERUCUT");
+        System.out.println("4. HITUNG VOLUME SILINDER");
+        System.out.println("5. HITUNG VOLUME LIMAS SEGITIGA");
+        do {
+            System.out.print("MASUKKAN PILIHAN ANDA: "); pilihan=input.nextInt();
+            if (pilihan==1){
+                System.out.print("Panjang, lebar, dan tinggi balok (berurutan): ");
+                pbalok = input.nextInt(); lbalok = input.nextInt(); tbalok=input.nextInt();
+                vbalok = pbalok*lbalok*tbalok;
+                System.out.println("Volume Balok: "+vbalok); }
+            if (pilihan==2){
+                System.out.print("Jari-jari bola: "); jarijari=input.nextInt();
+                vbola = (4.0/3.0)*(22.0/7.0)*jarijari*jarijari*jarijari;
+                System.out.println("Volume Bola: "+vbola); }
+            if (pilihan==3) {
+                System.out.print("Jari-jari alas dan tinggi kerucut (berurutan): ");
+                jarijari=input.nextInt(); tinggi=input.nextInt();
+                lalaskerucut=(22.0/7.0)*jarijari*jarijari;
+                vkerucut = (1.0/3.0) * lalaskerucut * tinggi;
+                System.out.println("Volume Kerucut: "+vkerucut); }
+            if (pilihan==4){
+                System.out.print("Jari-jari alas dan tinggi silinder (berurutan): ");
+                jarijari=input.nextInt(); tinggi=input.nextInt();
+                lalassilinder=(22.0/7.0)*jarijari*jarijari;
+                vsilinder = lalassilinder*tinggi;
+                System.out.println("Volume Silinder: "+vsilinder); }
+            if (pilihan==5){
+                System.out.print("Alas, tinggi segitiga, dan tinggi limas (berurutan) : ");
+                asegitiga = input.nextInt(); tsegitiga = input.nextInt(); tinggi=input.nextInt();
+                lalaslimas = (1.0/2.0)*asegitiga*tsegitiga;
+                vlimas = (1.0/3.0)*lalaslimas*tinggi;
+                System.out.println("Volume Limas Segitiga: "+vlimas); }
+        } while (pilihan !=0);
+    }
+}
